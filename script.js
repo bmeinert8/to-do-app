@@ -61,8 +61,13 @@ const displayTasks = () => {
     const p = document.createElement("p");
     //set the inner html of the paragraph element to the task text
     p.innerHTML = `
+<<<<<<< HEAD
       <div class="todoContainer">
         <input type="checkbox" class="todoCheckbox" id="input-${index}" ${
+=======
+      <div class="todo-container">
+        <input type="checkbox" class="todo-checkbox" id="input-${index}" ${
+>>>>>>> 5fdd356a33febc22d18e245bb399d8badb04b1df
       item.disabled ? "checked" : ""
     }>
         <p id="todo-${index}" class="${
@@ -71,7 +76,11 @@ const displayTasks = () => {
       </div>
     `;
     //add an event listener to the paragraph element to toggle the task when clicked
+<<<<<<< HEAD
     p.querySelector(".todoCheckbox").addEventListener("change", () =>
+=======
+    p.querySelector(".todo-checkbox").addEventListener("change", () =>
+>>>>>>> 5fdd356a33febc22d18e245bb399d8badb04b1df
       toggleTask(index)
     );
     //append the paragraph element to the todoList list item
