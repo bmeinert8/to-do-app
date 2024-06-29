@@ -72,7 +72,7 @@ const displayTasks = () => {
     }>
         <p id="todo-${index}" class="${
       item.disabled ? "disabled" : ""
-    }" onclick="editTask(${index})">${item.text}</p>
+    }(${index})">${item.text}</p>
       </div>
     `;
     //add an event listener to the paragraph element to toggle the task when clicked
@@ -82,6 +82,7 @@ const displayTasks = () => {
     //append the paragraph element to the todoList list item
     todoList.appendChild(p);
   });
+  counter.textContent = todos.length;
 }
 
 //Toggle task function to change the status of the task from disabled = false to disabled = true
@@ -92,6 +93,8 @@ const toggleTask = (index) => {
   saveToLocalStorage();
   //display the tasks
   displayTasks();
+  //update the counter to show the number of tasks disabled = false
+  counter.textContent = todos.filter((item) => !item.disabled).length;
 }
 
 //delete all tasks function
