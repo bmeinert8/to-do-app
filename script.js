@@ -39,8 +39,11 @@ const addTask = () => {
     } else {
         todos.push({
             text: newTask, disabled: false});
+        //save to local storage
         saveToLocalStorage();
+        //clear the input field
         tdInput.value = "";
+        //display the tasks
         displayTasks();
     }
 }
@@ -77,4 +80,14 @@ const displayTasks = () => {
     //append the paragraph element to the todoList list item
     todoList.appendChild(p);
   });
+}
+
+//Toggle task function to change the status of the task from disabled = false to disabled = true
+const toggleTask = (index) => {
+  //toggle the status of the task
+  todos[index].disabled = !todos[index].disabled;
+  //save to local storage
+  saveToLocalStorage();
+  //display the tasks
+  displayTasks();
 }
