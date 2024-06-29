@@ -72,7 +72,7 @@ const displayTasks = () => {
     }>
         <p id="todo-${index}" class="${
       item.disabled ? "disabled" : ""
-    }(${index})">${item.text}</p>
+    }" onclick="editTask(${index})">${item.text}</p>
       </div>
     `;
     //add an event listener to the paragraph element to toggle the task when clicked
