@@ -7,7 +7,7 @@ const tdInput = document.getElementById("tdInput");
 const addButton = document.querySelector(".btnAdd");
 const counter = document.getElementById("taskCounter");
 const todoList = document.getElementById("todoList")
-const deleteButton = document.querySelector(".btnDelete");
+const deleteButton = document.querySelector(".btnDel");
 
 
 //add event listener to the document
@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     //display the tasks
     displayTasks();
+    //add event listener to the delete button whenever it is clicked
+    deleteButton.addEventListener("click", deleteAll);
 });
 
 //add task function
@@ -91,3 +93,14 @@ const toggleTask = (index) => {
   //display the tasks
   displayTasks();
 }
+
+//delete all tasks function
+const deleteAll = () => {
+  //clear the todos array
+    todos = [];
+    //save to local storage
+    saveToLocalStorage();
+    //display the tasks
+    displayTasks();
+}
+
